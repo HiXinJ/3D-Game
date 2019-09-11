@@ -19,8 +19,8 @@
 ### 3）编写一个代码，使用 debug 语句来验证 MonoBehaviour 基本行为或事件触发的条件  
 
 基本行为包括 
--   Awake()  
-    
+-   Awake()   
+    在对象加载时调用
 -   Start()  
     在Update被第一次调用前的一帧触发
 -   Update()   
