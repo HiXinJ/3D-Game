@@ -5,10 +5,10 @@
 
 ### 1）解释游戏对象（GameObjects）和资源（Assets）的区别与联系  
 
-    **游戏对象**是游戏中的实例，最简单的游戏对象比如游戏中的立方体、球体、声音、文字等。  
-    **资源**是制作游戏过程中用到的脚本文件、游戏对象的模型等。
+**游戏对象**是游戏中的实例，最简单的游戏对象比如游戏中的立方体、球体、声音、文字等。  
+**资源**是制作游戏过程中用到的脚本文件、游戏对象的模型等。
 
-    资源可以实例化游戏对象，也可以为游戏对象添加更改属性。
+资源可以实例化游戏对象，也可以为游戏对象添加更改属性。
 
 ### 2）下载几个游戏案例，分别总结资源、对象组织的结构（指资源的目录组织结构与游戏对象树的层次结构）
 
@@ -18,25 +18,25 @@
 
 ### 3）编写一个代码，使用 debug 语句来验证 MonoBehaviour 基本行为或事件触发的条件  
 
-    基本行为包括 
-    -   Awake()  
-        
-    -   Start()  
-        在Update被第一次调用前的一帧触发
-    -   Update()   
-        所有Start()执行完后被游戏循环调用
-    -   FixedUpdate()   
-        每个游戏循环由物理引擎调用，帧率是固定的
-    -   LateUpdate()   
-        每个游戏循环，在所有Update执行完后被调用
+基本行为包括 
+-   Awake()  
+    
+-   Start()  
+    在Update被第一次调用前的一帧触发
+-   Update()   
+    所有Start()执行完后被游戏循环调用
+-   FixedUpdate()   
+    每个游戏循环由物理引擎调用，帧率是固定的
+-   LateUpdate()   
+    每个游戏循环，在所有Update执行完后被调用
 
-    常用事件包括 
-    - OnGUI() 
-    用来渲染以及处理GUI事件，每一帧可能多次调用OnGUI
-    - OnDisable() 
-    当游戏对象被禁用时调用
-    - OnEnable()
-    当游戏对象被启用激活时调用
+常用事件包括 
+- OnGUI() 
+用来渲染以及处理GUI事件，每一帧可能多次调用OnGUI
+- OnDisable() 
+当游戏对象被禁用时调用
+- OnEnable()
+当游戏对象被启用激活时调用
 
 ### 4）查找脚本手册，了解 GameObject，Transform，Component 对象
 
@@ -144,14 +144,14 @@ public class ExampleScript : MonoBehaviour
 
 ## 2、井字棋(tic tac toe)小游戏
 
-    规则：两人轮流在印有九格方盘上划“+”或“O”字, 谁先把三个同一记号排成横线、直线、斜线, 即是胜者。
+规则：两人轮流在印有九格方盘上划“+”或“O”字, 谁先把三个同一记号排成横线、直线、斜线, 即是胜者。
 
 ![井字棋](image/TTTdemo.png)
 
 
-    参考官方文档，学习[IMGUI](https://docs.unity3d.com/Manual/GUIScriptingGuide.html)用法。
+参考官方文档，学习[IMGUI](https://docs.unity3d.com/Manual/GUIScriptingGuide.html)用法。
 
-    使用label表示棋盘
+使用label表示棋盘
 ```cs
     /* GUI.Label example */
 
