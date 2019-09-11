@@ -171,6 +171,8 @@ public class ExampleScript : MonoBehaviour
 效果如下
 ![label](image/labelexample.png)
 
+工程文件在[这里](https://github.com/HiXinJ/3D-Game/tree/master/1-离散仿真引擎基础/TicTacToe)  
+附上核心代码。
 ```cs
 using System.Collections;
 using System.Collections.Generic;
