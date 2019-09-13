@@ -146,8 +146,8 @@ public class ExampleScript : MonoBehaviour
 
 规则：两人轮流在印有九格方盘上划“+”或“O”字, 谁先把三个同一记号排成横线、直线、斜线, 即是胜者。
 
-![井字棋](image/TTTdemo.png)
 
+[![](image/videoPreview.png)](https://www.bilibili.com/video/av67575194)
 
 参考官方文档，学习[IMGUI](https://docs.unity3d.com/Manual/GUIScriptingGuide.html)用法。
 
