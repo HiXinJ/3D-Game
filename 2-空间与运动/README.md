@@ -29,7 +29,77 @@
     }
 ```
 
+
 ### 写一个程序，实现一个完整的太阳系， 其他星球围绕太阳的转速必须不一样，且不在一个法平面上。
+
+![solor system](image/solorsystem.png)
+
+自转：  
+```cs
+public void Rotate(Vector3 eulers, Space relativeTo = Space.Self);
+```
+Parameters
+
+  - eulers	The rotation to apply.
+  - relativeTo	Determines whether to rotate the GameObject either locally to the GameObject or relative to the Scene in world space.
+
+
+公转：  
+```cs
+// Rotates the transform about axis passing through point in world coordinates by angle degrees.
+public void RotateAround(Vector3 point, Vector3 axis, float angle);
+```
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SolorSystem : MonoBehaviour
+{
+    Vector3 sun;
+    // Start is called before the first frame update
+    void Start()
+    {
+        sun = Vector3.zero;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        GameObject.Find("Mercury").transform.RotateAround(sun, new Vector3(0, 1, 0.2f), 30 * Time.deltaTime);
+        GameObject.Find("Mercury").transform.Rotate(Vector3.up * Time.deltaTime * 1080);
+
+        GameObject.Find("Venus").transform.RotateAround(sun, new Vector3(0, 1, 0.1f), 25 * Time.deltaTime);
+        GameObject.Find("Venus").transform.Rotate(Vector3.up * Time.deltaTime * 300);
+
+        GameObject.Find("Earth").transform.RotateAround(sun, new Vector3(0, 1, 0), 35 * Time.deltaTime);
+        GameObject.Find("Earth").transform.Rotate(Vector3.up * Time.deltaTime * 360);
+        GameObject.Find("Moon").transform.Rotate(Vector3.up*500*Time.deltaTime);
+
+
+        GameObject.Find("Mars").transform.RotateAround(sun, new Vector3(0, 1, 0.5f), 50 * Time.deltaTime);
+        GameObject.Find("Mars").transform.Rotate(Vector3.up * Time.deltaTime * 360);
+
+        GameObject.Find("Jupiter").transform.RotateAround(sun, new Vector3(0.5f, 1, 0), 35 * Time.deltaTime);
+        GameObject.Find("Jupiter").transform.Rotate(Vector3.up * Time.deltaTime * 800);
+
+        GameObject.Find("Saturn").transform.RotateAround(sun, new Vector3(0, 1, 2), 45* Time.deltaTime);
+        GameObject.Find("Saturn").transform.Rotate(Vector3.up * Time.deltaTime * 810);
+
+        GameObject.Find("Uranus").transform.RotateAround(sun, new Vector3(0, 1, 0.3f), 50 * Time.deltaTime);
+        GameObject.Find("Uranus").transform.Rotate(Vector3.up * Time.deltaTime * 1000);
+
+        GameObject.Find("Neptune").transform.RotateAround(sun, new Vector3(0.1f, 1, 0.2f), 60 * Time.deltaTime);
+        GameObject.Find("Neptune").transform.Rotate(Vector3.up * Time.deltaTime * 1000);
+    }
+
+
+
+}
+
+```
+
 
 ## 2、Priests and Devils 编程实践
 
@@ -316,5 +386,5 @@ public class Click : MonoBehaviour
 }
 ```
 
-在线视频展示：
-[![videopriview](image/videoPreview.png)]()
+视频展示：
+[![videopriview](image/videoPreview.png)](https://v.youku.com/v_show/id_XNDM3MDQxODIyOA==.html?spm=a2h3j.8428770.3416059.1)
