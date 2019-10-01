@@ -1,0 +1,24 @@
+River
+position(0,0,0)
+rotation(0,0,0)
+Scale(25,2,10)
+
+Leftbank
+position(-17.5,1,0)
+Scale(10,4,10)
+
+Rightbank
+position(17.5,1,0)
+Scale(10,4,10)
+
+
+Role
+position(x, 3.5, 0)
+scale(1,1,1)
+
+LeftBoat
+position(10.3, 2, 0)
+
+RightBoat
+position(-10.3, 2, 0)
+Scale(4,2,3)
