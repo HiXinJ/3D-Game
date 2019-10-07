@@ -11,7 +11,6 @@ public class Judge :MonoBehaviour
      
     public void Update(){
             userGUI.gameState = SceneDirector.GetInstance().CSController.Defeat();
-        
-        
+
     }
 }
