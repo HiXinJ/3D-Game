@@ -292,4 +292,4 @@ public class Judge :MonoBehaviour
 }
 ```
 
-详细代码在[Priests-and-Devils2/Assets/Scripts](Priests-and-Devils2/Assets/Scripts)
+详细代码在[Priests-and-Devils2/Assets/Scripts]([Priests-and-Devils2/Assets/Scripts](https://github.com/HiXinJ/3D-Game/tree/master/3-%E5%8A%A8%E4%BD%9C%E5%88%86%E7%A6%BB%E7%89%88/Priests-and-Devils2))
