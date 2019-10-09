@@ -9,5 +9,4 @@ public class UFOData : MonoBehaviour {
 
     // 击落UFO的得分
     public int score;
-
 }

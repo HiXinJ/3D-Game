@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameStatus{GameOver, GameStart, GamePlaying};
+public enum GameStatus { GameOver, GameStart, GamePlaying };
 public class FirstController : MonoBehaviour, ISceneController, IUserAction
 {
     public CCActionManager actionManager;
@@ -13,40 +13,38 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction
     private int life = 5;
 
     // 出现在场景中的飞碟队列
-    private Queue<GameObject> UFOList = new Queue<GameObject>();          
+    private Queue<GameObject> UFOList = new Queue<GameObject>();
 
     // 逃离飞碟的队列
-    private List<GameObject> UFOFlyingList = new List<GameObject>();          
+    private List<GameObject> UFOFlyingList = new List<GameObject>();
 
-    private int round = 1;                                                   
+    private int round = 1;
 
     //发射UFO的时间间隔
-    private float sendInterval = 0.8f;                                               
+    private float sendInterval = 0.8f;
 
     // 定义3个游戏状态
-    private bool gamePlaying = false;                                       
-    private bool gameOver = false;                                                               
+    private bool gamePlaying = false;
+    private bool gameOver = false;
     private GameStatus gameStatus;
     //每个round有10个trails
-    private int trails = 10;                                          
+    private int trails = 10;
     private int scored = 0;
-
 
     void Awake()
     {
-        SceneDirector director = SceneDirector.GetInstance();     
-        director.CSController = this;     
+        SceneDirector director = SceneDirector.GetInstance();
+        director.CSController = this;
     }
-    void Start ()
+    void Start()
     {
-        
+
         UFOfactory = Singleton<UFOFactory>.Instance;
         actionManager = gameObject.AddComponent<CCActionManager>() as CCActionManager;
         StartGame();
     }
-    
-	
-	void Update ()
+
+    void Update()
     {
         //游戏结束，取消定时发送飞碟
         if (gameStatus == GameStatus.GameOver)
@@ -55,7 +53,7 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction
             return;
         }
         //设定一个定时器，发送飞碟，游戏开始
-        else if (gameStatus==GameStatus.GameStart)
+        else if (gameStatus == GameStatus.GameStart)
         {
             InvokeRepeating("LoadResources", 1f, sendInterval);
             gameStatus = GameStatus.GamePlaying;
@@ -65,28 +63,28 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction
 
 
         //进入下一回合增加难度
-        if (trails==0)
+        if (trails == 0)
         {
             round++;
             trails = 10;
             CancelInvoke("LoadResources");
             gameStatus = GameStatus.GameStart;
-            if(round>3)
+            if (round > 3)
                 sendInterval = 0.3f;
-            else 
+            else
                 sendInterval = sendInterval - 0.2f;
         }
     }
 
     public void LoadResources()
     {
-        UFOList.Enqueue(UFOfactory.GetUFO(round)); 
+        UFOList.Enqueue(UFOfactory.GetUFO(round));
     }
 
     private void SendUFO()
     {
         // UFOList.Enqueue(UFOfactory.GetUFO(round)); 
-                     
+
         if (UFOList.Count != 0)
         {
             // GameObject ufo=UFOfactory.GetUFO(round);
@@ -102,9 +100,9 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction
     public void Hit(Vector3 pos)
     {
         Ray ray = Camera.main.ScreenPointToRay(pos);
-        RaycastHit[] hits =Physics.RaycastAll(ray);
+        RaycastHit[] hits = Physics.RaycastAll(ray);
 
-        foreach (RaycastHit hit in hits) 
+        foreach (RaycastHit hit in hits)
         {
             //射线打中物体
             if (hit.collider.gameObject.GetComponent<UFOData>() != null)
@@ -118,7 +116,7 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction
                         UFOfactory.FreeUFO(hit.collider.gameObject);
                         return;
                     }
-                }          
+                }
             }
         }
     }
@@ -140,14 +138,14 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction
             GameObject ufo = UFOFlyingList[i];
             //UFO没被打中
             if ((Mathf.Abs(ufo.transform.position.x) > 20 ||
-                Mathf.Abs(ufo.transform.position.y) > 13) && 
+                Mathf.Abs(ufo.transform.position.y) > 13) &&
                 ufo.gameObject.activeSelf == true)
             {
                 UFOfactory.FreeUFO(UFOFlyingList[i]);
                 UFOFlyingList.Remove(UFOFlyingList[i]);
                 life--;
             }
-        }        
+        }
     }
 
     public int GetLife()
@@ -155,14 +153,13 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction
         return life;
     }
 
-
     public void StartGame()
     {
         gameStatus = GameStatus.GameStart;
     }
     public void ReStart()
     {
-        foreach(GameObject ufo in UFOFlyingList)
+        foreach (GameObject ufo in UFOFlyingList)
             UFOfactory.FreeUFO(ufo);
         UFOFlyingList.Clear();
         UFOList.Clear();
@@ -176,8 +173,6 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction
 
     public void GameOver()
     {
-        gameStatus=GameStatus.GameOver;
+        gameStatus = GameStatus.GameOver;
     }
-
-
 }

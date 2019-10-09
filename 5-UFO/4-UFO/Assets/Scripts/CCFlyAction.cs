@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
  
 public class CCFlyAction : SSAction {
-
-
     Vector3 speed;
- 
-    float flewTime = 0;
  
     public static CCFlyAction GetSSAction(GameObject UFO)
     {
@@ -36,6 +32,4 @@ public class CCFlyAction : SSAction {
             this.callback.SSActionEvent(this);
         }
 	}
- 
-
 }

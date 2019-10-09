@@ -29,10 +29,7 @@ public class UserGUI : MonoBehaviour
     void OnGUI()
     {
         GUIStyle button_style;
-        button_style = new GUIStyle("button")
-        {
-            fontSize = 50
-        };
+
 
         if(gameState == GameState.playing)
         {    
