@@ -9,7 +9,7 @@
     1. 使用带缓存的工厂模式管理不同飞碟的生产与回收，该工厂必须是场景单实例的！具体实现见参考资源 Singleton 模板类；
     2. 近可能使用前面 MVC 结构实现人机交互与游戏模型分离。
 
-[视频链接]()
+[视频链接](https://v.youku.com/v_show/id_XNDM5MjAxMTM3Ng==.html?spm=a2h3j.8428770.3416059.1)
 
 ## 一、UML图
 
@@ -493,7 +493,6 @@ public class UFOFactory : MonoBehaviour
         newUFO.GetComponent<Renderer>().material.color = UFOColor;
         newUFO.GetComponent<UFOData>().score = round;
         int X = Random.Range(0,100) % 2 == 0? -1 : 1;
-        // int Y = Random.Range(-1,1);
 
         newUFO.GetComponent<UFOData>().speed.x = UFOSpeed.x;
         newUFO.GetComponent<UFOData>().speed.y = UFOSpeed.y;

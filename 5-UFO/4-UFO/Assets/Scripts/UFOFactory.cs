@@ -66,8 +66,7 @@ public class UFOFactory : MonoBehaviour
         newUFO.GetComponent<Renderer>().material.color = UFOColor;
         newUFO.GetComponent<UFOData>().score = round;
         int X = Random.Range(0,100) % 2 == 0? -1 : 1;
-        // int Y = Random.Range(-1,1);
-
+        
         newUFO.GetComponent<UFOData>().speed.x = UFOSpeed.x;
         newUFO.GetComponent<UFOData>().speed.y = UFOSpeed.y;
 
