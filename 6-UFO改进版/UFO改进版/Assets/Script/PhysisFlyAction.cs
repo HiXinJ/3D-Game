@@ -17,8 +17,6 @@ public class PhysisFlyAction : SSAction {
 	public override void Start () {
         gameobject.GetComponent<Rigidbody>().AddForce(gravity, ForceMode.Force);
         gameobject.GetComponent<Rigidbody>().AddForce(impluseForce, ForceMode.Impulse);
-
-
     }
  
     // Update is called once per frame
