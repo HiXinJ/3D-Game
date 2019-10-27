@@ -13,3 +13,5 @@
 五、[打飞碟](5-UFO/README.md)
 
 六、[打飞碟改进版](6-UFO改进版/README.md)
+
+七、[巡逻兵](7-巡逻兵/README.md)
