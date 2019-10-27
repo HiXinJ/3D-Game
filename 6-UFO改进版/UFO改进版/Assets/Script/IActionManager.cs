@@ -5,5 +5,4 @@ using UnityEngine;
 public interface IActionManager
 {
     void SendUFO(GameObject UFO);
-
 }
