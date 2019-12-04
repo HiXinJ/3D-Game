@@ -10,7 +10,7 @@
 牧师过河状态图：
 ![img](img/StatusGraph.png)
 
-## 搜索算法
+## 状态表示
 
 我们可以用搜索解决牧师过河问题，可用的搜索算法A*，BFS等。
 
@@ -37,6 +37,7 @@ State(P, D, 1) => Actions(p, d) => (P-p, D-d, 0)
 
 State(P, D, 0) => Actions(p, d) => (P+p, D+d, 1)
 
+## 具体实现
 这样我们就得到了状态的数据结构。
 Node表示一个节点，`int priest, evil`和`bool boat`表示States(P, D, B)
 
