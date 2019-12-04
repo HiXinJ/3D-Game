@@ -33,9 +33,9 @@ Actions (P, D)
 - 满足约束的情况下转入下一个状态
 
 
-State(P, D, 1) => Actions(p, d) => (P-p, D-d, 0)  
+State(P, D, 1) => Actions(p, d) => State(P-p, D-d, 0)  
 
-State(P, D, 0) => Actions(p, d) => (P+p, D+d, 1)
+State(P, D, 0) => Actions(p, d) => State(P+p, D+d, 1)
 
 ## 具体实现
 这样我们就得到了状态的数据结构。
