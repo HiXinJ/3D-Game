@@ -28,8 +28,8 @@ public class UserGUI : MonoBehaviour
     }
     void OnGUI()
     {
-        GUIStyle button_style;
-
+        GUIStyle button_style = new GUIStyle("button");
+        button_style.fontsize=30;
 
         if(gameState == GameState.playing)
         {    
