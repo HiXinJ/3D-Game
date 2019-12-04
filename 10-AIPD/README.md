@@ -5,7 +5,7 @@
 - 讲解图数据在程序中的表示方法
 - 利用算法实现下一步的计算
 
-
+视频展示：https://v.youku.com/v_show/id_XNDQ1ODM2NTY4OA==.html?spm=a2h3j.8428770.3416059.1
 
 牧师过河状态图：
 ![img](img/StatusGraph.png)
